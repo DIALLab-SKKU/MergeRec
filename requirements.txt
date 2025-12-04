@@ -1,0 +1,11 @@
+torch~=2.6.0
+transformers~=4.51.3
+lightning~=2.5.1
+tyro~=0.9.19
+wandb~=0.19.9
+sentencepiece
+peft~=0.15.2
+bitsandbytes~=0.45.5
+rich~=14.0.0
+pandas~=2.2.3
+scikit-learn~=1.6.1

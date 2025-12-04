@@ -1,0 +1,4 @@
+from ._base import TaskVectorMergingModuleBase
+from ._factory import load_merging_module
+from .layer_wise import TaskVectorMergingModuleLayerWise
+from .task_wise import TaskVectorMergingModuleTaskWise
