@@ -217,7 +217,6 @@ class DistillListNetLoss(DistillLossBase):
 def distill_loss_factory(
     loss_type: LossType,
     temperature: float | None = None,
-    margin: float | None = None,
     **kwargs,
 ) -> DistillLossBase:
     """
@@ -240,13 +239,9 @@ def distill_loss_factory(
             return DistillKDLoss(temperature)
         case LossType.MSE:
             return DistillMSELoss(**kwargs)
-        case LossType.PAIRWISE:
-            if margin is None:
-                raise ValueError("Margin must be provided for PairwiseLoss.")
-            return DistillPairwiseLoss(margin)
         case LossType.ADAMERGING:
             return DistillAdaMergingLoss(**kwargs)
-        case LossType.ADAMERGINGKD:
+        case LossType.ADAMERGING_KD:
             if temperature is None:
                 raise ValueError("Temperature must be provided for AdaMergingKDLoss.")
             if "coefficient" not in kwargs:
@@ -268,9 +263,5 @@ def distill_loss_factory(
             if "coefficient" not in kwargs:
                 raise ValueError("Coefficient must be provided for SinglePseudoLabelKDLoss.")
             return SinglePseudoLabelKDLoss(temperature, kwargs["coefficient"])
-        case LossType.LISTNET:
-            if temperature is None:
-                raise ValueError("Temperature must be provided for ListNetLoss.")
-            return DistillListNetLoss(temperature)
         case _:
             raise ValueError(f"Unknown loss type: {loss_type}")
