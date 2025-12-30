@@ -34,8 +34,8 @@ class TestSingleConfig(TestConfig):
 class TestMergeConfig(TestConfig, BaseMergeConfig):
     """Configuration for testing merged model outputs."""
 
-    weight_file: Path | Literal["average"] | None = field(default=None, metadata={"help": "Path to merge weight file"})
-    weight_file_line: int | None = field(default=None, metadata={"help": "Line number to read from weight file"})
+    weight_file: Path | None = field(default=None, metadata={"help": "Path to merge weight file"})
+    weight_file_line: int | float | None = field(default=None, metadata={"help": "Line number to read from weight file"})
 
     def __post_init__(self):
         # Call both parent class methods explicitly to ensure both are initialized properly

@@ -46,6 +46,11 @@ def main():
     # Load weights
     if config.weight_file == "average":
         weights = [1.0 / len(finetune_state_dicts)] * len(finetune_state_dicts)
+        print(f"Using average weights for {len(finetune_state_dicts)} models.")
+    elif config.weight_file.name == "uniform":
+        weight = config.weight_file_line
+        weights = [config.weight_file_line] * len(finetune_state_dicts)
+        print(f"Using uniform weights for {len(finetune_state_dicts)} models: {weight}.")
     else:
         weights = [eval(line) for line in config.weight_file.read_text().strip().splitlines()]
         weights = weights[config.weight_file_line]["weights"]

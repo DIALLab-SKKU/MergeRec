@@ -235,9 +235,6 @@ cython_debug/
 /RecRetrieval/
 /datasets/
 
-/scripts/**
-!/scripts/**/
-!/scripts/**/*.py
 /visualizations/**
 !/visualizations/**/
 !/visualizations/**/*.py
