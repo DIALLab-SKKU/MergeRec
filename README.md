@@ -115,15 +115,10 @@ If you find this work useful, please consider citing our paper:
 ```bibtex
 @inproceedings{kim2026mergerec,
   title     = {MergeRec: Model Merging for Data-Isolated Cross-Domain Sequential Recommendation},
-  author    = {Kim, Hyunsoo and Moon, Jaewan and Park, Seongmin and Lee, Jongwuk},
-  booktitle = {Proceedings of the 32nd ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+  author    = {Hyunsoo Kim and Jaewan Moon and Seongmin Park and Jongwuk Lee},
+  booktitle = {KDD},
   year      = {2026},
-  series    = {KDD '26},
-  address   = {Jeju Island, Republic of Korea},
-  month     = aug,
-  publisher = {ACM},
-  doi       = {10.1145/3770854.3780264},
-  isbn      = {979-8-4007-2258-5}
+  pages     = {To be updated}
 }
 ```
 
